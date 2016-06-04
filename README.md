@@ -55,7 +55,7 @@ class (or whatever controller you prefer), like the following:
 public function actions()
 {
     return [
-        'redirect' => ['class' => 'yeesoft\link\ErrorAction'],
+        'redirect' => ['class' => 'yeesoft\link\RedirectAction'],
     ];
 }
 ```
