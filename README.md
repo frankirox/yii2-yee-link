@@ -42,3 +42,33 @@ Configuration
 	],
 ],
 ```
+
+Using RedirectAction
+------
+RedirectAction redirects users using link settings.
+
+To use RedirectAction, you need to declare an action of RedirectAction
+type in the `actions()` method of your `SiteController`
+class (or whatever controller you prefer), like the following:
+
+```php
+public function actions()
+{
+    return [
+        'redirect' => ['class' => 'yeesoft\link\ErrorAction'],
+    ];
+}
+```
+ 
+After that you need to add rules:
+ 
+```php
+'rules' => [
+    '<action:(redirect)>/<slug:[\w \-]+>' => 'site/redirect',
+],
+'nonMultilingualUrls' => [
+    'redirect/index'
+],
+ ```
+ 
+ Now all links like this `www.mysite.com/redirect/slug` will be redirected to link that was specified in link record.
