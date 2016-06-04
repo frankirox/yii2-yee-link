@@ -74,7 +74,7 @@ class LinkSearch extends Link
         ]);
         
         $query->andFilterWhere(['like', 'slug', $this->slug])
-            ->andFilterWhere(['like', 'url', $this->content]);
+            ->andFilterWhere(['like', 'url', $this->url]);
 
         return $dataProvider;
     }

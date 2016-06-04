@@ -60,18 +60,6 @@ $this->params['breadcrumbs'][] = $this->title;
                     ],
                     'url',
                     'status_code',
-                    [
-                        'attribute' => 'created_by',
-                        'filter' => User::getUsersList(),
-                        'value' => function (Link $model) {
-                            return Html::a($model->author->username,
-                                ['/user/default/update', 'id' => $model->created_by],
-                                ['data-pjax' => 0]);
-                        },
-                        'format' => 'raw',
-                        'visible' => User::hasPermission('viewUsers'),
-                        'options' => ['style' => 'width:180px'],
-                    ],
                 ],
             ]);
             ?>
